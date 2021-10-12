@@ -3,17 +3,18 @@ import { Header } from './components/Header';
 import { Worth } from './components/Worth';
 import { SneakerList } from './components/SneakerList';
 import { AddSneaker } from './components/AddSneaker';
+import { GlobalProvider } from './components/context/GlobalState';
 
 function App() {
   return (
-    <div className="App">
+    <GlobalProvider>
       <Header />
       <div>
         <Worth />
         <SneakerList />
         <AddSneaker />
       </div>
-    </div>
+    </GlobalProvider>
   );
 }
 
