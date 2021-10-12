@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { Sneaker } from './Sneaker';
 import { GlobalContext } from './context/GlobalState'
 
 export const SneakerList = () => {
@@ -7,7 +8,7 @@ export const SneakerList = () => {
     return (
         <div>
             <ul>
-            {sneakers.map(sneakers => (<li>{sneakers.brand} {sneakers.model} '{sneakers.colorway}' - ${sneakers.price}</li>))}
+            {sneakers.map(sneaker => (<Sneaker key={sneaker.id} sneaker={sneaker} />))}
             </ul>
         </div>
     )
