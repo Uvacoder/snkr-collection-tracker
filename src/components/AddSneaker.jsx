@@ -1,33 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export const AddSneaker = () => {
+    const [brand, setBrand] = useState('');
+    const [model, setModel] = useState('');
+    const [colorway, setColorway] = useState('');
+    const [condition, setCondition] = useState('');
+    const [size, setSize] = useState('');
+    const [price, setPrice] = useState(0);
+
     return (
         <div>
             Add to collection
         <form>
         <div>
             <label for="text">Brand</label>
-            <input type="text" placeholder="Brand" />
+            <input type="text" value={brand} onChange={(e) => setBrand(e.target.value)} placeholder="Brand" />
         </div>
         <div>
             <label for="text">Model</label>
-            <input type="text" placeholder="Model" />
+            <input type="text" value={model} onChange={(e) => setModel(e.target.value)} placeholder="Model" />
         </div>
         <div>
             <label for="text">Colorway</label>
-            <input type="text" placeholder="Colorway" />
+            <input type="text" value={colorway} onChange={(e) => setColorway(e.target.value)} placeholder="Colorway" />
         </div>
         <div>
             <label for="text">Condition</label>
-            <input type="text" placeholder="Condition" />
+            <input type="text" value={condition} onChange={(e) => setCondition(e.target.value)} placeholder="Condition" />
         </div>
         <div>
             <label for="text">Size</label>
-            <input type="text" placeholder="Size" />
+            <input type="number" value={size} onChange={(e) => setSize(e.target.value)} placeholder="Size" />
         </div>
         <div>
-            <label for="amount">How much did you pay? <br /></label>
-            <input type="number" placeholder="Enter amount..." />
+            <label for="price">How much did you pay? <br /></label>
+            <input type="number" value={price} onChange={(e) => setPrice(e.target.value)} placeholder="Enter price..." />
         </div>
         <button>Add to collection</button>
         </form>
