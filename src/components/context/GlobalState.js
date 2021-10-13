@@ -27,9 +27,18 @@ export const GlobalProvider = ({ children }) => {
 
     }
 
+    function addSneaker(sneaker) {
+        dispatch({
+            type: 'ADD_SNEAKER',
+            payload: sneaker
+        });
+
+    }
+
     return (<GlobalContext.Provider value={{
         sneakers: state.sneakers,
-        deleteSneaker
+        deleteSneaker,
+        addSneaker
     }}>
         {children}
     </GlobalContext.Provider>)
