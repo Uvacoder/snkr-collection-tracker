@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { GlobalContext } from './context/GlobalState'
+import { GlobalContext } from '../context/GlobalState'
 
 export const Worth = () => {
     const { sneakers } = useContext(GlobalContext);
@@ -8,7 +8,7 @@ export const Worth = () => {
 
     return (
         <div>
-            Your sneaker collection is worth ${total}
+            <h2>Your sneaker collection is worth <span className="worth">${total}</span></h2>
         </div>
     )
 }

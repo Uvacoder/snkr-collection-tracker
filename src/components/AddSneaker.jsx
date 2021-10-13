@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { GlobalContext } from './context/GlobalState';
+import { GlobalContext } from '../context/GlobalState';
 
 export const AddSneaker = () => {
     const [brand, setBrand] = useState('');
@@ -52,7 +52,7 @@ export const AddSneaker = () => {
             <label for="price">How much did you pay? <br /></label>
             <input type="number" value={price} onChange={(e) => setPrice(e.target.value)} placeholder="Enter price..." />
         </div>
-        <button>Add to collection</button>
+        <button className="add-button">Add to collection</button>
         </form>
         </div>
     )

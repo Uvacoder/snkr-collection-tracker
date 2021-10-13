@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Sneaker } from './Sneaker';
-import { GlobalContext } from './context/GlobalState'
+import { GlobalContext } from '../context/GlobalState'
 
 export const SneakerList = () => {
     const { sneakers } = useContext(GlobalContext);

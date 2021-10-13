@@ -3,7 +3,7 @@ import React from 'react'
 export const Header = () => {
     return (
         <div>
-            Sneaker Collection Tracker
+            <h1>Sneaker Collection Tracker</h1>
         </div>
     )
 }
