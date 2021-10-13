@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react'
 import { Container } from '@mantine/core';
 import { Button } from '@mantine/core';
 import { Input } from '@mantine/core';
-import { NumberInput } from '@mantine/core';
+import { Space } from '@mantine/core';
 import { Select } from '@mantine/core';
 import { GlobalContext } from '../context/GlobalState';
 
@@ -43,30 +43,38 @@ export const AddSneaker = () => {
         { label: 'Yeezy' },
         ]}
         value={brand} onChange={(e) => setBrand(e.target.value)}/>
+        <Space h="sm" />
         <label for="text">Model</label>
         <Input
         type="text"
         placeholder="Model"
         size="md"
+        required
         value={model} onChange={(e) => setModel(e.target.value)}/>
+        <Space h="sm" />
         <label for="text">Colorway</label>
         <Input
         type="text"
         placeholder="Colorway"
         size="md"
+        required
         value={colorway} onChange={(e) => setColorway(e.target.value)}/>
+        <Space h="md" />
         <label for="text">Condition</label>
         <Input
         type="text"
         placeholder="Condition"
         size="md"
+        required
         value={condition} onChange={(e) => setCondition(e.target.value)}/>
+        <Space h="sm" />
         <label for="text">Size</label>
         <Input
         type="number"
         placeholder="Size"
         size="md"
         value={size} onChange={(e) => setSize(e.target.value)}/>
+        <Space h="sm" />
         <label for="text">Price</label>
         <Input
         type="number"
