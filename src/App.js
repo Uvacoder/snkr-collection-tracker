@@ -5,6 +5,7 @@ import { SneakerList } from './components/SneakerList';
 import { AddSneaker } from './components/AddSneaker';
 import { GlobalProvider } from './context/GlobalState';
 
+
 function App() {
   return (
     <GlobalProvider>

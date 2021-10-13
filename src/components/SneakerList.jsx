@@ -6,7 +6,7 @@ export const SneakerList = () => {
     const { sneakers } = useContext(GlobalContext);
 
     return (
-        <div>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <ul>
             {sneakers.map(sneaker => (<Sneaker key={sneaker.id} sneaker={sneaker} />))}
             </ul>

@@ -1,4 +1,9 @@
 import React, { useState, useContext } from 'react'
+import { Container } from '@mantine/core';
+import { Button } from '@mantine/core';
+import { Input } from '@mantine/core';
+import { NumberInput } from '@mantine/core';
+import { Select } from '@mantine/core';
 import { GlobalContext } from '../context/GlobalState';
 
 export const AddSneaker = () => {
@@ -7,7 +12,7 @@ export const AddSneaker = () => {
     const [colorway, setColorway] = useState('');
     const [condition, setCondition] = useState('');
     const [size, setSize] = useState('');
-    const [price, setPrice] = useState(0);
+    const [price, setPrice] = useState('');
 
     const { addSneaker } = useContext(GlobalContext);
     const onSubmit = e => {
@@ -25,35 +30,52 @@ export const AddSneaker = () => {
     }
 
     return (
-        <div>
-            Add to collection
+        <Container>
         <form onSubmit={onSubmit}>
-        <div>
-            <label for="text">Brand</label>
-            <input type="text" value={brand} onChange={(e) => setBrand(e.target.value)} placeholder="Brand" />
-        </div>
-        <div>
-            <label for="text">Model</label>
-            <input type="text" value={model} onChange={(e) => setModel(e.target.value)} placeholder="Model" />
-        </div>
-        <div>
-            <label for="text">Colorway</label>
-            <input type="text" value={colorway} onChange={(e) => setColorway(e.target.value)} placeholder="Colorway" />
-        </div>
-        <div>
-            <label for="text">Condition</label>
-            <input type="text" value={condition} onChange={(e) => setCondition(e.target.value)} placeholder="Condition" />
-        </div>
-        <div>
-            <label for="text">Size</label>
-            <input type="number" value={size} onChange={(e) => setSize(e.target.value)} placeholder="Size" />
-        </div>
-        <div>
-            <label for="price">How much did you pay? <br /></label>
-            <input type="number" value={price} onChange={(e) => setPrice(e.target.value)} placeholder="Enter price..." />
-        </div>
-        <button className="add-button">Add to collection</button>
+        <Select
+        label="Brand"
+        placeholder="Select a brand"
+        size="md"
+        data={[
+        { label: 'Adidas' },
+        { label: 'Air Jordan' },
+        { label: 'Nike' },
+        { label: 'Yeezy' },
+        ]}
+        value={brand} onChange={(e) => setBrand(e.target.value)}/>
+        <label for="text">Model</label>
+        <Input
+        type="text"
+        placeholder="Model"
+        size="md"
+        value={model} onChange={(e) => setModel(e.target.value)}/>
+        <label for="text">Colorway</label>
+        <Input
+        type="text"
+        placeholder="Colorway"
+        size="md"
+        value={colorway} onChange={(e) => setColorway(e.target.value)}/>
+        <label for="text">Condition</label>
+        <Input
+        type="text"
+        placeholder="Condition"
+        size="md"
+        value={condition} onChange={(e) => setCondition(e.target.value)}/>
+        <label for="text">Size</label>
+        <Input
+        type="number"
+        placeholder="Size"
+        size="md"
+        value={size} onChange={(e) => setSize(e.target.value)}/>
+        <label for="text">Price</label>
+        <Input
+        type="number"
+        placeholder="How much did you pay?"
+        size="md"
+        value={price} onChange={(e) => setPrice(e.target.value)}/>
+        <br />
+        <Button color="dark" size="md" type="submit">Add to collection</Button>
         </form>
-        </div>
+        </Container>
     )
 }
