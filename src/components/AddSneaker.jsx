@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { GlobalContext } from './context/GlobalState';
 
 export const AddSneaker = () => {
     const [brand, setBrand] = useState('');
@@ -8,10 +9,25 @@ export const AddSneaker = () => {
     const [size, setSize] = useState('');
     const [price, setPrice] = useState(0);
 
+    const { addSneaker } = useContext(GlobalContext);
+    const onSubmit = e => {
+        e.preventDefault();
+        const newSneaker = {
+            id: Math.floor(Math.random() * 100000000),
+            brand,
+            model,
+            colorway,
+            condition,
+            size,
+            price: +price
+        }
+        addSneaker(newSneaker);
+    }
+
     return (
         <div>
             Add to collection
-        <form>
+        <form onSubmit={onSubmit}>
         <div>
             <label for="text">Brand</label>
             <input type="text" value={brand} onChange={(e) => setBrand(e.target.value)} placeholder="Brand" />

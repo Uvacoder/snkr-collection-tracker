@@ -6,6 +6,11 @@ export default (state, action) => {
                 sneakers: state.sneakers.filter(sneaker => sneaker.id !==
                 action.payload)
             }
+            case 'ADD_SNEAKER':
+                return {
+                    ...state,
+                    sneakers: [action.payload, ...state.sneakers]
+                }
         default:
             return state;
     }
