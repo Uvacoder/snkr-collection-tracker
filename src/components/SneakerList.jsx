@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Sneaker } from './Sneaker';
-import { Card, Image, Text, Badge, Button, Group, useMantineTheme } from '@mantine/core';
+import { Card, Image, Text, Badge, Button, Group, useMantineTheme, SimpleGrid } from '@mantine/core';
 import { GlobalContext } from '../context/GlobalState'
 
 export const SneakerList = () => {
@@ -8,9 +8,9 @@ export const SneakerList = () => {
 
     return (
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <ul>
+            <SimpleGrid cols={3}>
             {sneakers.map(sneaker => (<Sneaker key={sneaker.id} sneaker={sneaker} />))}
-            </ul>
+            </SimpleGrid>
         </div>
     )
 }
