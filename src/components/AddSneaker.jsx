@@ -1,9 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { Container } from '@mantine/core';
-import { Button } from '@mantine/core';
-import { Input } from '@mantine/core';
-import { Space } from '@mantine/core';
-import { Select } from '@mantine/core';
+import { Container, Button, Input, Space, Select, Modal } from '@mantine/core';
 import { GlobalContext } from '../context/GlobalState';
 
 export const AddSneaker = () => {
@@ -13,6 +9,7 @@ export const AddSneaker = () => {
     const [condition, setCondition] = useState('');
     const [size, setSize] = useState('');
     const [price, setPrice] = useState('');
+    const [opened, setOpened] = useState(false);
 
     const { addSneaker } = useContext(GlobalContext);
     const onSubmit = e => {
@@ -31,6 +28,14 @@ export const AddSneaker = () => {
 
     return (
         <Container>
+        <Modal
+        size="xl"
+        opened={opened}
+        onClose={() => setOpened(false)}
+        overlayOpacity={0.95}
+        transition="slide-up"
+        >
+        <h2>Start adding some heat 👟🔥🔥</h2>
         <form onSubmit={onSubmit}>
         <Select
         label="Brand"
@@ -84,6 +89,8 @@ export const AddSneaker = () => {
         <br />
         <Button color="dark" size="md" type="submit">Add to collection</Button>
         </form>
+        </Modal>
+        <Button color="dark" size="md" onClick={() => setOpened(true)}>Add to your collection</Button>
         </Container>
     )
 }
