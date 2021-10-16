@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import { Card, Image, Text, Badge, Button, Group, useMantineTheme } from '@mantine/core';
-import { Grid, Col} from '@mantine/core';
+import { Card, Image, Text, Badge, Button, Group } from '@mantine/core';
+import { } from '@mantine/core';
 import { GlobalContext } from '../context/GlobalState'
 
 export const Sneaker = ({ sneaker }) => {

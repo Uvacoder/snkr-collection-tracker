@@ -1,4 +1,4 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useReducer, useEffect } from "react";
 import AppReducer from './AppReducer';
 
 // Initial state
@@ -11,7 +11,13 @@ export const GlobalContext = createContext(initialState);
 
 // Provider component
 export const GlobalProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(AppReducer, initialState);
+    const [state, dispatch] = useReducer(AppReducer, initialState, () =>{
+        const localData = localStorage.getItem('state');
+        return localData ? JSON.parse(localData) : [];
+    });
+    useEffect(() => {
+        localStorage.setItem('state', JSON.stringify(state))
+    }, [state]);
 
     // Actions
     function deleteSneaker(id) {
@@ -37,5 +43,4 @@ export const GlobalProvider = ({ children }) => {
     }}>
         {children}
     </GlobalContext.Provider>)
-
 }
