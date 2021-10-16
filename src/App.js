@@ -12,8 +12,8 @@ function App() {
       <Header />
       <div>
         <Worth />
-        <SneakerList />
         <AddSneaker />
+        <SneakerList />
       </div>
     </GlobalProvider>
   );
