@@ -11,8 +11,6 @@ function App() {
     <GlobalProvider>
       <Header />
       <div>
-        <Worth />
-        <AddSneaker />
         <SneakerList />
       </div>
     </GlobalProvider>

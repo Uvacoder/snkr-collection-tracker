@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Card, Image, Text, Badge, Button, Group } from '@mantine/core';
+import { Card, Image, Text, Badge, Button, Group, Space} from '@mantine/core';
 import { } from '@mantine/core';
 import { GlobalContext } from '../context/GlobalState'
 
@@ -7,6 +7,7 @@ export const Sneaker = ({ sneaker }) => {
     const { deleteSneaker } = useContext(GlobalContext);
     return (
         <div>
+            <Space h="xl" />
             <div style={{ width: 340, margin: 'auto' }}>
             <Card shadow="sm" padding="lg">
             <Card.Section>

@@ -26,6 +26,7 @@ export const AddSneaker = () => {
         addSneaker(newSneaker);
     }
 
+
     return (
         <Container>
         <Modal
