@@ -5,9 +5,9 @@ import { GlobalContext } from '../context/GlobalState'
 
 export const SneakerList = () => {
     const { sneakers } = useContext(GlobalContext);
-    const prices = sneakers.map(sneaker => sneaker.price);
-    const total = prices.reduce((acc, item) => (acc += item), 0).toFixed(2);
-    const count = sneakers.length;
+    const prices = sneakers?.map(sneaker => sneaker.price);
+    const total = prices?.reduce((acc, item) => (acc += item), 0).toFixed(2);
+    const count = sneakers?.length;
 
     return (
         
@@ -20,7 +20,7 @@ export const SneakerList = () => {
             </Container>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <SimpleGrid cols={4}>
-                {sneakers.map(sneaker => (<Sneaker key={sneaker.id} sneaker={sneaker} />))}
+                {sneakers?.map(sneaker => (<Sneaker key={sneaker.id} sneaker={sneaker}/>))}
                 </SimpleGrid>
             </div>
         </div>
