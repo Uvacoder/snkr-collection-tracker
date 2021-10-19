@@ -11,7 +11,7 @@ export const Sneaker = ({ sneaker }) => {
             <div style={{ width: 340, margin: 'auto' }}>
             <Card shadow="sm" padding="lg">
             <Card.Section>
-            <Image src="https://cdn.flightclub.com/3000/TEMPLATE/253215/1.jpg" height={250} alt="Norway" />
+            <Image src={sneaker.image} height={250} alt={sneaker.brand} />
             </Card.Section>
             <Group position="apart" style={{ marginBottom: 5}}>
             <Text weight={500}>{sneaker.brand} {sneaker.model} '{sneaker.colorway}'</Text>

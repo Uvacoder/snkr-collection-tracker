@@ -7,6 +7,7 @@ export const SneakerList = () => {
     const { sneakers } = useContext(GlobalContext);
     const prices = sneakers.map(sneaker => sneaker.price);
     const total = prices.reduce((acc, item) => (acc += item), 0).toFixed(2);
+    const count = sneakers.length;
 
     return (
         
@@ -15,7 +16,7 @@ export const SneakerList = () => {
             <Space h="xl" />
             <Space h="xl" />
             <Space h="xl" />
-                <h2>You have 0 sneakers in your collection - Your sneaker collection is worth <span className="worth">${total}</span></h2>
+                <h2>You have {count} sneakers in your collection - Your sneaker collection is worth <span className="worth">${total}</span></h2>
             </Container>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <SimpleGrid cols={4}>

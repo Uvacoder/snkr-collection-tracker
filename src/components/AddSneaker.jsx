@@ -3,6 +3,7 @@ import { Container, Button, Input, Space, Select, Modal } from '@mantine/core';
 import { GlobalContext } from '../context/GlobalState';
 
 export const AddSneaker = () => {
+    const [image, setImage] = useState('');
     const [brand, setBrand] = useState('');
     const [model, setModel] = useState('');
     const [colorway, setColorway] = useState('');
@@ -16,6 +17,7 @@ export const AddSneaker = () => {
         e.preventDefault();
         const newSneaker = {
             id: Math.floor(Math.random() * 100000000),
+            image,
             brand,
             model,
             colorway,
@@ -38,6 +40,13 @@ export const AddSneaker = () => {
         >
         <h2>Start adding some heat 👟🔥🔥</h2>
         <form onSubmit={onSubmit}>
+        <label for="text">Image</label>
+        <Input
+        type="text"
+        placeholder="Image Link"
+        size="md"
+        required
+        value={image} onChange={(e) => setImage(e.target.value)}/>
         <Select
         label="Brand"
         placeholder="Select a brand"

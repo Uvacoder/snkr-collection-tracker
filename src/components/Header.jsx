@@ -11,9 +11,7 @@ export const HeaderBar = styled.header`
     background-color: #FFF;
     border-bottom: 1px solid #eaeaea;
     display: flex;
-    -webkit-box-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
     align-items: center;
     z-index: 3;
     position: fixed;
@@ -32,7 +30,6 @@ export const NavLogo = styled.a`
     font-weight: 500;
     font-size: 25px;
     text-decoration: none;
-    color: var(--main);
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 `;
 
@@ -44,11 +41,8 @@ export const LinksUnordered = styled.ul`
     line-height: 1;
     text-decoration: none;
     color: rgb(11, 87, 114);
-
     display: list-item;
     text-align: -webkit-match-parent;
-
-    color: var(--main-text);
     font-family: Fira Sans,sans-serif;
     font-size: 17px;
     margin: 10px;
@@ -58,7 +52,6 @@ export const LinksUnordered = styled.ul`
 `;
 
 export const Links = styled.a`
-    color: var(--main-text);
     font-family: Fira Sans,sans-serif;
     font-size: 17px;
     margin: 10px;
